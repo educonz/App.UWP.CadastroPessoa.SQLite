@@ -1,0 +1,54 @@
+﻿<Page
+    x:Class="App.SQLite.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App.SQLite"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid Margin="15,10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" Margin="0,10,0,3">Nome</TextBlock>
+            <TextBox Grid.Row="1" Text="{Binding Nome, Mode=TwoWay}" Name="edtNome"/>
+
+            <TextBlock Grid.Row="2" Margin="0,10,0,3">CPF</TextBlock>
+            <TextBox Grid.Row="3" Text="{Binding CPF, Mode=TwoWay}" Name="edtCPF"/>
+
+            <TextBlock Grid.Row="4" Margin="0,10,0,3">Email</TextBlock>
+            <TextBox Grid.Row="5" Text="{Binding Email, Mode=TwoWay}" Name="edtEmail"/>
+
+            <Button Grid.Row="6" Margin="0,10,0,3" Width="200" Click="Button_Click">Salvar</Button>
+
+            <ListBox Grid.Row="7" Margin="0,10" Name="lista" ScrollViewer.HorizontalScrollBarVisibility="Auto">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Border>
+                            <StackPanel Margin="10,10,10,10" Width="Auto" HorizontalAlignment="Stretch">
+                                <TextBlock Text="{Binding Nome}" FontSize="24"/>
+                                <TextBlock Text="{Binding CPF}" FontSize="20"/>
+                                <TextBlock Text="{Binding Email}" FontSize="20"/>
+
+                                <StackPanel>
+                                    <Button Margin="0,10,0,3" Width="200" Click="btnEditar_Click" Name="btnEditar">Editar</Button>
+                                    <Button Margin="0,10,0,3" Width="200" Click="btnExcluir_Click" Name="btnExcluir">Excluir</Button>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Grid>
+    </Grid>
+</Page>
