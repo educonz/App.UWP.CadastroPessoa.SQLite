@@ -8,16 +8,11 @@ using Windows.Storage;
 
 namespace App.SQLite.Helpers
 {
-    public interface IDatabase
-    {
-        void CriarDatabase();
-    }
-
-    public class Database : IDatabase
+    public class DatabaseHelper
     {
         private readonly string _dbPath;
 
-        public Database()
+        public DatabaseHelper()
         {
             _dbPath = Path.Combine(Path.Combine(ApplicationData.Current.LocalFolder.Path, "DB.sqlite"));
         }

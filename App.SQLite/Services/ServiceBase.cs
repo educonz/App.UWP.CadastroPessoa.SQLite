@@ -9,11 +9,11 @@ namespace App.SQLite.Services
 {
     public abstract class ServiceBase<T> : IOperable<T>, IReadable<T> where T : class, new()
     {
-        private readonly Database _database;
+        private readonly DatabaseHelper _database;
 
         public ServiceBase()
         {
-            _database = new Database();
+            _database = new DatabaseHelper();
         }
 
         public void Delete(T entity)

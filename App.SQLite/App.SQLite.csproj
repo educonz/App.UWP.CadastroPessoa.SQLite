@@ -97,7 +97,7 @@
     </Compile>
     <Compile Include="Core\IOperable.cs" />
     <Compile Include="Core\IReadable.cs" />
-    <Compile Include="Helpers\DatabaseHelperClass.cs" />
+    <Compile Include="Helpers\DatabaseHelper.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>

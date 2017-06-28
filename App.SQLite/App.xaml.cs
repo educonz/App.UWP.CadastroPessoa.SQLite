@@ -38,7 +38,7 @@ namespace App.SQLite
             this.InitializeComponent();
             this.Suspending += OnSuspending;
 
-            new Database().CriarDatabase();
+            new DatabaseHelper().CriarDatabase();
         }
 
         private async Task<bool> CheckFileExists(string fileName)
